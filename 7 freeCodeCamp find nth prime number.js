@@ -25,16 +25,7 @@ function nthPrime(n) {
     // We have to check if the current number can be divided by any number in the array of prime numbers (this is the prime factor theorem). If not, then it itself is prime.
     for (let i = 0; primeArray[i] <= max; i++) {
       if (currentNumber % primeArray[i] == 0) {
-        console.log(
-          "NOT " +
-            currentNumber +
-            " -- Found non-prime at i=" +
-            i +
-            ":\n\t\t" +
-            primeArray[i] +
-            " is a factor of " +
-            currentNumber
-        );
+        // console.log("NOT " + currentNumber + " -- Found non-prime at i=" + i + ":\n\t\t" + primeArray[i] + " is a factor of " + currentNumber);
         isItPrime = false;
         break;
       }
@@ -42,23 +33,15 @@ function nthPrime(n) {
 
     // is isItPrime still true after all that for-looping? Well, then we can add it to the array!
     if (isItPrime == true) {
-      console.log(
-        currentNumber + " is a prime, so we're adding it into the prime array."
-      );
+      // console.log(currentNumber + " is a prime, so we're adding it into the prime array.");
 
       primeArray.push(currentNumber);
 
       // console.log("\t\tAt number " + currentNumber + " the prime array is " + primeArray + "\n")
     }
 
-    let decimalPlaces = 2;
-    console.log(
-      "\t\t\t\tAt " +
-        currentNumber +
-        " odds of getting a prime are: " +
-        Math.round((primeArray.length / currentNumber) * 100 * 100) / 100 +
-        "%"
-    );
+    // let decimalPlaces = 2;
+    // console.log("\t\t\t\tAt " +currentNumber +" odds of getting a prime are: " +Math.round((primeArray.length / currentNumber) * 100 * 100) / 100 +"%");
 
     // increase count of currentNummber
     if (currentNumber == 2) {
@@ -68,10 +51,8 @@ function nthPrime(n) {
     } // we can skip the even numbers (they will never be prime), so we do +2.
   }
 
-  console.log(
-    "\n\nPrime #" + n + " is " + primeArray[primeArray.length - 1] + "!"
-  );
+  console.log("\n\nPrime #" + n + " is " + primeArray[primeArray.length - 1] + "!");
   return primeArray[primeArray.length - 1]; // returns final prime
 }
 
-nthPrime(10001);
+nthPrime(12);
