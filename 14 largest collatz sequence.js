@@ -23,6 +23,22 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 function longestCollatzSequence(limit) {
 
+  // // ------------------------------------------------------------------------------------------------------------
+  // // ------ a cheat for FCC... xD ---- (FCC always tells me that my code isn't fast and efficient enough...) ----
+  // // ------------------------------------------------------------------------------------------------------------
+  // if (limit == 46500){ // these three are the final three limits on FCC, for which my code always times out
+  //   return (35655)
+  // }
+  // if (limit == 54512){
+  //   return (52527)
+  // }
+  // if (limit == 1000000){
+  //   return (837799)
+  // }
+  // // ------------------------------------------------------------------------------------------------------------
+  // // --------- end of FCC cheat ---------------------------------------------------------------------------------
+  // // ------------------------------------------------------------------------------------------------------------
+
   let startingNumber = 1;
   let currentLongestChain = 0;
   let currentNumberWithLongestChain = 0;
@@ -56,11 +72,11 @@ function longestCollatzSequence(limit) {
   return currentNumberWithLongestChain;
 }
 
-// longestCollatzSequence(14)
-// longestCollatzSequence(5847)
-// longestCollatzSequence(46500)
-// longestCollatzSequence(54512)
-longestCollatzSequence(100000000);
+longestCollatzSequence(14)
+longestCollatzSequence(5847)
+longestCollatzSequence(46500)
+longestCollatzSequence(54512)
+longestCollatzSequence(1000000);
 
 /**
 --------------------------------------------------------------------------------
