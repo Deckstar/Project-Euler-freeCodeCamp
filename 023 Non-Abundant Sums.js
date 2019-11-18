@@ -157,17 +157,6 @@ function isAbundant(n) {
   return cache[n] = (sigma(n) - n > n);
 }
 
-/**
-"With the isAbundant function, we can formulate a new function, which checks if a number is a sum of two abundant numbers:"
-*/
-function isSumOfTwoAbundants(n) {
-
-  for (var i = 1; i <= n; i++) {
-    if (isAbundant(i) && isAbundant(n - i))
-      return true;
-  }
-  return false;
-}
 
 /**
 "Since this function scans all numbers for abundant numbers over and over again, we can save all abundant numbers once, and reduce the search scope quite a bit:"
@@ -181,13 +170,7 @@ for (var i = 1; i <= 28123; i++) {
 /**
 "However, we know the abundant numbers already but still go back to the isAbundant function. A much faster way is just summing all abundant numbers and check if they exceed our limit, which removes the isSumOfTwoAbundants function and makes it a lookup array:"
 */
-function isSumOfTwoAbundants(n) {
-  for (var i = 0; i < abundants.length; i++) {
-    if (isAbundant(n - abundants[i]))
-      return true;
-  }
-  return false;
-}
+
 
 var isSumOfTwoAbundants = new Array(28123 + 1);
 for (var i = 0; i < abundants.length; i++) {
