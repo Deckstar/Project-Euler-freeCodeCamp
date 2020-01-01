@@ -30,6 +30,8 @@ Find the next triangle number that is also pentagonal and hexagonal.
  * Then we can modify it to perform the same operation for triangle numbers and hexagonal numbers.
  * 
  * The brute-force solution — checking every consecutive integer — takes a little time (on my desktop it took 17.715 seconds in Visual Studio Code's terminal), but it works.
+ * 
+ * The far more efficient solution only checks iterations of hexagonal numbers. (In fact, the isHexagonal function here is redundant).
  */
 
 function isPentagonal(num){
